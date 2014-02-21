@@ -26,8 +26,8 @@ public class ZipImageThread implements Runnable{
 	@Override
 	public void run() {
 
-		String sourceFolderStr = "E:\\上传TEMP\\推女郎(更新至19期)\\版权图"; // 源目录
-		String targetFolderStr = "E:\\afterZIP\\banquantu\\";
+		String sourceFolderStr = "E:\\1\\国内 网络 火热 援交 3P 多P 应有尽有"; // 源目录
+		String targetFolderStr = "E:\\afterZIP\\333333333333\\";
 		
 		File sourceFolder = new File(sourceFolderStr);
 		File targetFolder = new File(targetFolderStr);
@@ -51,7 +51,7 @@ public class ZipImageThread implements Runnable{
 				CoffeeFileTools.createFolder(newPath);
 			
 			try {
-				ZipImage.imageZip(temp, new File(newPath+ temp.getName()), null, 1024, 768, 1.0f);
+				ZipImage.imageZip(temp, new File(newPath+ temp.getName()), null, 800, 600, 1.0f);
 			} catch (IOException e) {
 				System.out.println("遇到不能正常处理的");
 				// 有些图片 用 ImageIO读取时会抛异常
@@ -66,7 +66,7 @@ public class ZipImageThread implements Runnable{
 					image = decoder.decodeAsBufferedImage();
 					ImageIO.write(image, "JPEG", srcImageFileGood);  
 					
-					ZipImage.imageZip(srcImageFileGood, new File(newPath+ temp.getName()), null, 800, 600, 1.0f);
+					ZipImage.imageZip(srcImageFileGood, new File(newPath+ temp.getName()), null, 800, 600, 0.7f);
 				} catch (ImageFormatException e1) {
 					e1.printStackTrace();
 				} catch (IOException e1) {

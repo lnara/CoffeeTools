@@ -66,15 +66,19 @@ public class MergeImage {
 	}
 
 	public static void main(String[] args) throws FileNotFoundException {
-		String path = "H:\\2 工具\\VM8\\0 目录整理\\0 系列\\推女郎(更新至19期)\\版权图";
-		String finalPath = "H:\\2 工具\\VM8\\0 目录整理\\0 系列\\推女郎(更新至19期)\\版权图merge";
-		//String path = "D:\\BeautyLeg-1-900";
+		String path = "E:\\upload\\444444444";
+		String finalPath = "E:\\2";
 		File root = new File(path);
 		File[] folders = root.listFiles();
 		for(File folder : folders){
 			System.out.println("正在处理 " + folder.getName());
 			MergeImage.plus(folder.getAbsolutePath(), finalPath, folder.getName()+ "(压缩拼接图).jpg");
 		}
+		
+		
+		
+		
+		
 	}
 
 }

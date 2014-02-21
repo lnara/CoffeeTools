@@ -11,7 +11,7 @@ public class ZipImageTest {
 
 
 	public static void main(String[] args){
-		String sourceFolderStr = "E:\\上传TEMP\\推女郎(更新至19期)\\版权图"; // 源目录
+		String sourceFolderStr = "E:\\1\\国内 网络 火热 援交 3P 多P 应有尽有"; // 源目录
 		
 		List<File> fileList = new ArrayList<File>();
 		CoffeeFileTools.getFilesFromFolder(sourceFolderStr, "*.jpg", fileList);

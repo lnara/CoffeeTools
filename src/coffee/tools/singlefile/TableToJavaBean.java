@@ -1,4 +1,4 @@
-package singlefile;
+package coffee.tools.singlefile;
 
 import java.io.File;
 import java.io.FileOutputStream;

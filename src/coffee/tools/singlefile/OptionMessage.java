@@ -1,4 +1,4 @@
-package singlefile;
+package coffee.tools.singlefile;
 
 import javax.swing.JOptionPane;
 

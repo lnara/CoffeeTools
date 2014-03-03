@@ -1,10 +1,9 @@
-package FLTUtils;
+package coffee.tools;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-import coffee.tools.CoffeeFileTools;
 
 public class FLTUtils{
 	

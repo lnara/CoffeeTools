@@ -1,4 +1,4 @@
-package outer;
+package coffee.tools.outer;
 
 public class OtherUseless {
 

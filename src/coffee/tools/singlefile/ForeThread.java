@@ -1,4 +1,4 @@
-package test;
+package coffee.tools.singlefile;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

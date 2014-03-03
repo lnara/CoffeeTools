@@ -1,4 +1,4 @@
-package outer;
+package coffee.tools.outer;
 
 import java.beans.BeanInfo;
 import java.beans.IntrospectionException;

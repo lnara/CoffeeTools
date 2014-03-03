@@ -2,11 +2,13 @@ package coffee.tools;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -763,6 +765,44 @@ public class CoffeeFileTools {
 
 	}
 	
+	/** 
+	 * 将List里的String写到file中
+	 * @param file 
+	 * @param list
+	 */
+	public static boolean write(File file , List<String> list) throws IOException{
+		BufferedWriter writer = new BufferedWriter(new FileWriter(file));
+		String s = "";
+		for(int i = 0; i < list.size();i++){
+			s = list.get(i);
+			writer.write(s);
+		}
+		writer.close();
+		return true;
+	}
+	
+	/** 
+	 * 将List里的String写到file中
+	 * @param file 
+	 * @param list
+	 */
+	public static boolean write(String file , List<String> list) throws IOException{
+		return write(new File(file),list);
+	}
+	
+	
+	/**
+	 * 读取指定行号内容
+	 */
+	public static String readFileByLine(File file, int lineNum) {
+		String returnStr = "";
+		List<String> list = readFileByLine(file, lineNum, lineNum,null);
+		if (list != null && list.size() > 0) {
+			returnStr = list.get(0);
+		}
+		return returnStr;
+	}
+	
 	/** 连续的 ? 替换成 .{N} N为?的个数 */
 	private static String getLianXuQuestionMark(String s) {
 		int firstIndex = s.indexOf("?");
@@ -789,15 +829,4 @@ public class CoffeeFileTools {
 		return s == null || "".equals(s);
 	}
 	
-	public static void main(String[] args) {
-		
-		List<File> l = new ArrayList<File>();
-		
-		CoffeeFileTools.getFilesFromFolder("D:/test","??23*.txt",l);
-		
-		for(File f: l){
-			System.out.println(f.getAbsolutePath());
-		}
-		
-	}
 }

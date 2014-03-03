@@ -48,10 +48,7 @@ public class MergeImage {
 			int heightTemp = 0;
 			for (int i = 0; i < images.size(); i++) {
 				// 绘制图片 draw the picture
-				ImageNew.setRGB((widthNew - widths.get(i)) / 2, heightTemp, widths.get(i), heights.get(i),
-				images.get(i).getRGB(0, 0, widths.get(i), heights.get(i),
-				new int[widths.get(i) * heights.get(i)], 0, widths.get(i)),
-				0, widths.get(i));
+				ImageNew.setRGB((widthNew - widths.get(i)) / 2, heightTemp, widths.get(i), heights.get(i),images.get(i).getRGB(0, 0, widths.get(i), heights.get(i),new int[widths.get(i) * heights.get(i)], 0, widths.get(i)),0, widths.get(i));
 				heightTemp += heights.get(i);
 			}
 			// 保存新图 save the new picture
@@ -66,7 +63,7 @@ public class MergeImage {
 	}
 
 	public static void main(String[] args) throws FileNotFoundException {
-		String path = "E:\\upload\\444444444";
+		String path = "H:\\2 工具\\VM8\\安装包\\05 自拍 目录用";
 		String finalPath = "E:\\2";
 		File root = new File(path);
 		File[] folders = root.listFiles();
@@ -74,8 +71,6 @@ public class MergeImage {
 			System.out.println("正在处理 " + folder.getName());
 			MergeImage.plus(folder.getAbsolutePath(), finalPath, folder.getName()+ "(压缩拼接图).jpg");
 		}
-		
-		
 		
 		
 		

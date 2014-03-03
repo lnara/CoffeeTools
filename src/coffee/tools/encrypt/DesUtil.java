@@ -1,4 +1,4 @@
-package test;
+package coffee.tools.encrypt;
 
 import java.io.IOException;
 import java.security.SecureRandom;

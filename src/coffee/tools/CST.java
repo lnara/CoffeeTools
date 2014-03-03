@@ -35,7 +35,6 @@ public class CST {
 	public static String NULL = "";
 	
 	
-	
 	// 测试
 	public static void main(String[] args) {
 		System.out.println(CST.FILE_SEPARATOR);

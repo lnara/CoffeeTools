@@ -78,7 +78,7 @@ public class CoffeeFileTools {
 			File newFile = new File(file.getParent() + "/" + newName);
 			if (newFile.exists()) {
 				// 目录下已经有了
-				throw new Exception("目录已经存在!!");
+				throw new Exception("已经存在!!");
 			} else {
 				file.renameTo(newFile);
 			}

@@ -12,49 +12,34 @@ import coffee.tools.CoffeeFileTools;
 import coffee.tools.MD5FileUtil;
 
 public class GetDiff {
-
-	public static void main(String[] args) {
-		Map<String, Integer> m = new HashMap<String, Integer>();
-
-//		String f = "D:\\1";
-//
-//		List<File> list = CoffeeFileTools.getAllFileFromFolder(f);
-//		List<String> delList = new ArrayList<String>();
-//		try {
-//			for (File ff : list) {
-//
-//				String md5Str;
-//				md5Str = MD5FileUtil.getFileMD5String(ff);
-//				System.out.println("fuck" + md5Str);
-//				if (m.containsKey(md5Str)) {
-//					delList.add(ff.getAbsolutePath()+"\r\n");
-//				} else {
-//					m.put(md5Str, 1);
-//				}
-//			}
-			
-//			list = new ArrayList<File>();
-//			for (String fff : delList) {
-//				System.out.println(fff);
-//				CoffeeFileTools.delete(fff);
-//			}
-//			CoffeeFileTools.write("D:\\abc.txt", delList);
-		//	
-//		} catch (IOException e) {
-//			e.printStackTrace();
-//		}
-		
-		
-		List<String> l = CoffeeFileTools.readFileByLine(new File("D:\\abc.txt"), 1, 0, "UTF-8");
-		
-		for(String s : l){
-			try {
-				CoffeeFileTools.delete(s);
-				
-			} catch (FileNotFoundException e) {
-				e.printStackTrace();
+	
+	public static Map<Long , String> m = new HashMap<Long, String>();
+	public static List<String> delFile = new ArrayList<String>();
+	
+	public static void findDeff(String pathS) throws IOException {
+		List<File> list = CoffeeFileTools.getAllFileFromFolder(pathS);
+		for(File f : list){
+			Long l = f.length();
+			if(m.containsKey(l)){
+				System.out.println("相同文件 : " + m.get(l));
+				delFile.add(f.getAbsolutePath()+"\r\n");
+			} else {
+				m.put(l, f.getAbsolutePath());
 			}
 		}
+	}
+
+	public static void main(String[] args) throws IOException {
+//		GetDiff.findDeff("H:\\2 工具\\VM8\\安装包\\网拍");
+//		GetDiff.findDeff("E:\\迅雷下载");
+//		GetDiff.findDeff("D:\\VM8\\国新 part1");
+//		CoffeeFileTools.write(new File("E:\\1.txt"), delFile);
+		List<String> l = CoffeeFileTools.readFileByLine(new File("E:\\1.txt"));
+		for(String temp : l){
+			CoffeeFileTools.delete(temp);
+		}
+		
+		
 		
 	}
 }
